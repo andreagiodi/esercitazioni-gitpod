@@ -11,7 +11,7 @@ import {
 })
 
 export class UserItemComponent implements OnInit {
-  @Input() "name": string; // <-- Aggiungi la notazione @input
+  @Input() "namee": string; // <-- Aggiungi la notazione @input
 
   constructor() {
      // Rimuovi l'impostazione del nome
