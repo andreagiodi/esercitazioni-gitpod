@@ -16,7 +16,7 @@ export class AppComponent { //implements Oninit
   {
 
   }
-  //----------------------------20:41 minuti del video tutorial------------
+  //----------------------------20:41 minuti del video tutorial-------------
   ngOnInit(): void {
     this.obsRooms = this.http.get<Booking[]>('https://my-json-server.typicode.com/malizia-g/hotel/booking');
     this.obsRooms.subscribe(this.fatiqualcosa)
