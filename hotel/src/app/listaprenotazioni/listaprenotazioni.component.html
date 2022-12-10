@@ -1,8 +1,12 @@
-<p>listaprenotazioni works!</p>
+<p>Ecco le prenotazioni delle stanze</p>
 <div *ngFor="let b of listaPreno">
     {{b.from}} <br>
     {{b.to}} <br>
     {{b.name}} <br>
     {{b.surname}} <br>
+
+    <button (click)="mostraDett(b.room)">Mostra dettagli stanza</button>
     <hr>
   </div>
+
+  <!--<app-dettagli-stanza [room] = room></app-dettagli-stanza>-->

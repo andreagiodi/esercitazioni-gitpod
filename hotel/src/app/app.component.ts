@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Booking } from './models/booking.model';
+import { Room } from './models/room.model';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent { //implements Oninit
   title = 'hotel';
   obsRooms! : Observable<Booking[]>
   data! : Booking[];
+  selectedRoom : Room = new Room();
   constructor(private http : HttpClient) 
   {
 

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Booking } from '../models/booking.model';
+import {Room} from '../models/room.model';
 
 @Component({
   selector: 'app-listaprenotazioni',
@@ -8,6 +9,7 @@ import { Booking } from '../models/booking.model';
 })
 export class ListaprenotazioniComponent{
   @Input() listaPreno!: Booking[];
+  @Input() room! : Room;
   constructor() 
   {
 
@@ -15,5 +17,13 @@ export class ListaprenotazioniComponent{
 
   ngOnInit(): void {
 
+  }
+
+  mostraDett(room : Room) 
+  {
+    this.room.id = room.id;
+    this.room.name = room.name;
+    this.room.num_D_bed = room.num_D_bed;
+    this.room.num_S_bed = room.num_S_bed;
   }
 }
