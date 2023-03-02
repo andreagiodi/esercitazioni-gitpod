@@ -31,11 +31,32 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/artists/${id}`;
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQCOXkaavmuErM9HE35Rc-_Y3fq110ZtcLWM0IxHkSXINA-1N1UuPu0Xw7CJ9mlhqLi76wteAGkWtdWXS3ll0CSPmf9MQogp_heS4u0_OGBC4UtFp8_28cLjw-r-kK09GX8BQnmhMCTZuIxN16HANROSYzq0QZuH79BAPKLRTEngNijzPiRP_bxU6gOhJAlDdz3E'
+        'Bearer BQD6CiixS6LcUDn6M4CQhbG95NICovFxVt-xA0K1joaD46fqHfmNK8TOHv6szcZ6CQlD-dbWmLAEzSFwpVxCKexWmHAH_g-ixC4C4o8jYNmAvb5eXgYHPI9Wdj4sxX1-BGGr7DUcRVBXvMDWLA3_Y50DiEtX3R2A16nCFuiSN2seAqnmhvGWQx3DbPlaGfFUN_Td'
     });
     
     return this.http.get(url, { headers });
   }
+
+  getAlbum(id: string) {
+    const url = `https://api.spotify.com/v1/albums/${id}`;
+    const headers = new HttpHeaders({
+      Authorization:
+        'Bearer BQDhIFjGyA48B5aUQ7FaMB_VY9pnIPtGM-7JHbXbLFb1juFbxngK2l8xnH08J6sMEvpxRSG0ifd6cJy6qOJxdIvPat2yGorSTQMlbpOJv9QkT-9F1v-4WQFchJLYZtZOPeb46Wa906qr1L-kKPK0yuxbaf3UfBEDGt4UXp8-l6KvDvJIowjgJ97X3UgqqYlPVSKb'
+    });
+    
+    return this.http.get(url, { headers });
+  }
+
+  getAlbumTracks(id: string) {
+    const url = `https://api.spotify.com/v1/albums/${id}/tracks`;
+    const headers = new HttpHeaders({
+      Authorization:
+        'Bearer BQD_Irdxn5SZDLK1MVjlcvfNfJrKzSbjm9Zo-B_u2jLAT-6-Iqd9BjnV13dvnqYd-DooO73sv6apFcDcMlC80yhOVaHBAnPvNQyJQWx_qDtprcrzgKEKt2mtSmV6wG09xPEgOOo9CC8dz2ef_7ACSSE9lhXzpFKNEOwMFhVb7PbmAlQpT4xXADqd3MecqGMsFH6w'
+    });
+    
+    return this.http.get(url, { headers });
+  }
+
 
   
 

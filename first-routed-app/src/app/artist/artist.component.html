@@ -1,10 +1,11 @@
 <div *ngIf="artist">
     <h1>{{ artist.name }}</h1>
     <p>
-        <img src="{{ artist.album.images[1].url }}">
+        <img src="{{ artist.images[1].url }}">
     </p>
+    <h1>Genere</h1>
     <p>
-        
+        {{ artist|json }}
     </p>
     <p><a href (click)="back()">Back</a></p>
 </div>
