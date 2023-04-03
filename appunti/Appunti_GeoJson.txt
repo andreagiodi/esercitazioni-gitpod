@@ -1,0 +1,32 @@
+1) Come si rappresenta un oggetto in GeoJson?
+    Il formato GeoJson è formato da l'oggetto, in cui si trovano le proprietà
+    Type, Geometry e Proprieties.
+    All'interno di Geometry c'è un oggetto che a sua volta possiede le 
+    proprietà type e coordinates.
+
+2) Come si rappresenta un vettore?
+    Un vettore è rappresentato da un oggetto avente proprietà "type e 
+    coordinates".
+
+3) Come si rappresenta un oggetto che contiene un vettore?
+    Viene rappresentato da un "contenitore" contenente altri 
+    "contenitori"...
+
+4) Data la seguente immagine prova a rappresentare in Json la mucca e 
+il coccodrillo:
+    //Gli Animali Vertebrati
+    {
+        "type": "MAMMIFERI",
+        "proprieties": [
+            [ ["TESTO 1"], ["TESTO 2"] ]
+        ]
+        "type": "ANFIBI",
+        "proprieties": [
+            [ ["TESTO 1"], ["TESTO 2"] ]
+        ]
+    }
+
+5) Descrivi il tipo coordinate LineString (lo trovi nella tabella qui 
+sopra) come ho fatto io per Polygon:
+    
+
