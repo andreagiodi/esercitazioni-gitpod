@@ -37,7 +37,7 @@ export class AppComponent implements AfterViewInit {
     console.log(feature)
     let newColor = "#ddff00"; //RED
     if(feature.h.id == 0) newColor = "#ddff00"; //GREEN
-    else newColor = "#ddff00"; //BLUE
+    else newColor = "#44939c"; //BLUE
     return ({
       clickable: false,
       fillColor: newColor,
