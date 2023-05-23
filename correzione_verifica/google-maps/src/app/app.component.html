@@ -1,0 +1,9 @@
+{{title}}
+<!--Centriamo la mappa alle nostre coordinate-->
+<button (click)="visualizza()">Visualizza</button>
+
+<google-map [center]="center" *ngIf="active">  
+  <!--Mettiamo un marker alle nostre coordinate-->
+  <map-marker [position]="position" [label]="label" [title]="title">
+  </map-marker>
+</google-map>
