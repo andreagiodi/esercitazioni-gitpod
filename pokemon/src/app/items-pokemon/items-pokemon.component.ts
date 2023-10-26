@@ -29,10 +29,10 @@ export class ItemsPokemonComponent {
 
   getRouterParam = (params: ParamMap) =>
   {
-    let beerId : any = params.get('id'); 
-    console.log (beerId); 
+    let beerId : any = params.get('name'); 
+    
 
-    this.obsBeers = this.service.getBeerByID(beerId);
+    this.obsBeers = this.service.getPokemon();
     this.obsBeers.subscribe((data: any) => { this.results = data; console.log(this.results) });
     console.log(this.results)
   }
