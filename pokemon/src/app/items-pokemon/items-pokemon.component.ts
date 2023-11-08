@@ -29,7 +29,7 @@ export class ItemsPokemonComponent {
 
   getRouterParam = (params: ParamMap) =>
   {
-    let beerId : any = params.get('name'); 
+    let ItemId : any = params.get('name'); 
     
 
     this.obsBeers = this.service.getPokemon();
@@ -37,9 +37,18 @@ export class ItemsPokemonComponent {
     console.log(this.results)
   }
 
+ 
+
   back(){ 
     this.location.back();
   }
+
+  getLastPart(arg: string) {
+    return arg.split("/")[6]
+  }
 }
+
+
+
 
 

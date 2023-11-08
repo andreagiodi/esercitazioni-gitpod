@@ -14,6 +14,10 @@ export class ApiService {
 
     return this.http.get(url)
   }
+
+  getLastpart(arg: string) {
+    return arg.split("/")[6]
+  }
   /*
   getBeersByName(name : string) {
     const url = `https://api.punkapi.com/v2/beers?beer_name=${name}`

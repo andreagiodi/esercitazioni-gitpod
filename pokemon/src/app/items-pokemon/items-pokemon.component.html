@@ -1,9 +1,9 @@
 <div *ngIf="results">
 
 
-    <ul>
-        <li *ngFor="let type of results.results"><a [routerLink]="['/item', type.name]">{{type.name}}</a></li>
-    </ul>
+    <div *ngFor="let type of results.results">
+        <a routerLink="/item/{{getLastPart(type.url)}}">{{type.name}}</a>
+    </div>
     
     
     <p><a href (click)="back()">Back</a></p>
