@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { ItemsPokemonComponent } from './items-pokemon/items-pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpecificItemComponent } from './specific-item/specific-item.component';
+import { SpecificPokemonComponent } from './specific-pokemon/specific-pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsPokemonComponent,
-    SpecificItemComponent
+    SpecificItemComponent,
+    SpecificPokemonComponent
   ],
   imports: [
     BrowserModule,

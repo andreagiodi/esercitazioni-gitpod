@@ -23,6 +23,11 @@ export class ApiService {
     const url = 'https://pokeapi.co/api/v2/type/' + arg
     return this.http.get(url)
   }
+  getSpecificPokemon(arg: string) {
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + arg
+    return this.http.get(url)
+  }
+
   /*
   getBeersByName(name : string) {
     const url = `https://api.punkapi.com/v2/beers?beer_name=${name}`

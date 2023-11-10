@@ -1,10 +1,25 @@
+<main class="page-content">
 <div *ngIf="results">
 
 
-    <div *ngFor="let type of results.results">
-        <a routerLink="/item/{{getLastPart(type.url)}}">{{type.name}}</a>
-    </div>
+<div *ngFor="let type of results.results">
+    <a routerLink="/item/{{getLastPart(type.url)}}">
+        <div class="card">
+            <div class="content">
+                <h2 class="title">{{type.name}}</h2>
+                <p class="copy"></p>
+                <button class="btn">View</button>
+            </div>
+        </div>
+    </a>
+</div>
     
+
+    
+
     
     <p><a href (click)="back()">Back</a></p>
 </div>
+
+  
+</main>

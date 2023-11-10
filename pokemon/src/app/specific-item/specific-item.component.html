@@ -2,7 +2,7 @@
 
 
     <div *ngFor="let type of results.pokemon">
-        <a >{{type.name}}</a>
+        <a routerLink="/pokemon/{{getLastPart(type.pokemon.url)}}">{{type.pokemon.name}}</a>
     </div>
     
     
