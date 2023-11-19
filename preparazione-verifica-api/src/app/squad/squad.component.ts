@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import {Location} from '@angular/common'
 
 @Component({
-  selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css']
+  selector: 'app-squad',
+  templateUrl: './squad.component.html',
+  styleUrls: ['./squad.component.css']
 })
-export class ItemsComponent {
+export class SquadComponent {
   routeObs!: Observable<ParamMap>; 
   obsBeers! : any
 
@@ -29,10 +29,10 @@ export class ItemsComponent {
 
   getRouterParam = (params: ParamMap) =>
   {
-    let ItemId : any = params.get('name'); 
+    let ItemId : any = params.get('id'); 
     
 
-    this.obsBeers = this.service.getFixtures();
+    this.obsBeers = this.service.getTeam(ItemId);
     this.obsBeers.subscribe((data: any) => { this.results = data; console.log(this.results) });
     console.log(this.results)
   }
@@ -47,8 +47,3 @@ export class ItemsComponent {
     return arg.split("/")[6]
   }
 }
-
-
-
-
-

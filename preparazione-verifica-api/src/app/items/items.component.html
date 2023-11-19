@@ -1,25 +1,11 @@
-<main class="page-content">
-    <div *ngIf="results">
-    
-    
-    <div *ngFor="let type of results.results">
-        <a routerLink="/item/{{getLastPart(type.url)}}">
-            <div class="card">
-                <div class="content">
-                    <h2 class="title">{{type.name}}</h2>
-                    <p class="copy"></p>
-                    <button class="btn">View</button>
-                </div>
-            </div>
-        </a>
-    </div>
-        
-    
-        
-    
-        
-        <p><a href (click)="back()">Back</a></p>
-    </div>
-    
-      
-    </main>
+<h1>INCONTRI LIVE</h1>
+
+<div *ngIf="results">
+    <div *ngFor="let i of results.response" class="team-card">
+        <h1>
+            <a [routerLink]="'/item/' + i.teams.home.id">{{ i.teams.home.name }}</a>
+            VS
+            <a [routerLink]="'/item/' + i.teams.away.id">{{ i.teams.away.name }}</a>
+        </h1>
+    </div>      
+</div>

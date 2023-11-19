@@ -1,0 +1,16 @@
+<div *ngIf="results">
+    <div *ngFor="let i of results.response" class="team-card">
+        <h1>{{ i.team.name }}</h1>
+        <h2>{{ i.team.country }}</h2>
+        <h2>Fondato nel {{ i.team.founded }}</h2>
+        <img src="{{ i.team.logo }}" alt="{{ i.team.name }} Logo">
+        <br>
+        <h1>{{ i.venue.name }}</h1>
+        <h2>{{ i.venue.city }}</h2>
+        <h2>Capacità: {{ i.venue.capacity }}</h2>
+        <h2>Fondato nel {{ i.venue.founded }}</h2>
+        <img src="{{ i.venue.image }}" alt="{{ i.venue.image }} Logo">
+        <br>
+        <h4>Indirizzo: {{i.venue.address}}</h4>
+    </div>
+</div>

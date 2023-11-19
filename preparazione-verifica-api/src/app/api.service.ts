@@ -13,26 +13,28 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getFootballFixtures(date: string): Observable<any> {
-    const url = 'https://api-football-v1.p.rapidapi.com/v3/fixtures';
-
-    // Set headers
+  getFixtures() {
+    const url = `https://v3.football.api-sports.io/fixtures?live=all`;
     const headers = new HttpHeaders({
-      'X-RapidAPI-Key': this.rapidApiKey,
-      'X-RapidAPI-Host': this.rapidApiHost
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": "0507ba789af897bea3a33413a8669eb5"
+      
     });
 
-    // Set query parameters
-    const params = new HttpParams().set('date', date);
-
-    // Make the GET request
-    return this.http.get(url, { headers, params });
+    let Fixture = this.http.get(url, { headers: headers });
+    return Fixture;
   }
 
-  getItem() {
-    const url = 'https://pokeapi.co/api/v2/type'
+  getTeam(arg: string) {
+    const url = `https://v3.football.api-sports.io/teams?id=`+ arg;
+    const headers = new HttpHeaders({
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": "0507ba789af897bea3a33413a8669eb5"
+      
+    });
 
-    return this.http.get(url)
+    let Teams = this.http.get(url, { headers: headers });
+    return Teams;
   }
 
   getLastpart(arg: string) {
