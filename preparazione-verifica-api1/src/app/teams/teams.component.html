@@ -1,0 +1,9 @@
+<h1>Italian Teams</h1>
+
+<div *ngIf="results">
+    <div *ngFor="let i of results.response" class="team-card">
+        <h1>
+            <a [routerLink]="'/teamid/' + i.team.id">{{ i.team.name }}</a>
+        </h1>
+    </div>      
+</div>

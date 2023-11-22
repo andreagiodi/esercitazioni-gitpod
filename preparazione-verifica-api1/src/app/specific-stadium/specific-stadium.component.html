@@ -1,0 +1,9 @@
+<div *ngIf="results">
+    <div *ngFor="let i of results.response" class="team-card">
+        <h1>{{ i.name }}</h1>
+        <h2>{{ i.city }}</h2>
+        <h2>Capacity: {{ i.capacity }}</h2>
+        <img src="{{ i.image }}" alt="{{ i.image }} Logo">
+        <br>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div *ngIf="results">
+    <div *ngFor="let i of results.response" class="team-card">
+        <h1>{{ i.team.name }}</h1>
+        <h2>{{ i.team.country }}</h2>
+        <h2>Fondato nel {{ i.team.founded }}</h2>
+        <img src="{{ i.team.logo }}" alt="{{ i.team.name }} Logo">
+        <br>
+       <a [routerLink]="'/venueid/' + i.venue.id"><h1>{{ i.venue.name }}</h1></a>
+    </div>
+</div>
