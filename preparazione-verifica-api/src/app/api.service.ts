@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { items } from './model/data.model';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private rapidApiKey = '8aa6196893msh88b3ee02c1af94fp12c8e8jsn5054e5c94b29';
+  private rapidApiKey = '15f0458aa599f1888ffa38089535e43f';
   private rapidApiHost = 'api-football-v1.p.rapidapi.com';
 
   constructor(private http: HttpClient) { }
@@ -17,19 +18,19 @@ export class ApiService {
     const url = `https://v3.football.api-sports.io/fixtures?live=all`;
     const headers = new HttpHeaders({
       "x-rapidapi-host": "v3.football.api-sports.io",
-      "x-rapidapi-key": "0507ba789af897bea3a33413a8669eb5"
+      "x-rapidapi-key": "15f0458aa599f1888ffa38089535e43f"
       
     });
 
-    let Fixture = this.http.get(url, { headers: headers });
-    return Fixture;
+    let data = this.http.get<items>(url, { headers: headers });
+    return data;
   }
 
   getTeam(arg: string) {
     const url = `https://v3.football.api-sports.io/teams?id=`+ arg;
     const headers = new HttpHeaders({
       "x-rapidapi-host": "v3.football.api-sports.io",
-      "x-rapidapi-key": "0507ba789af897bea3a33413a8669eb5"
+      "x-rapidapi-key": "15f0458aa599f1888ffa38089535e43f"
       
     });
 
