@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { items } from './model/data.model';
+import { Root } from './model/games.model';
+import { Root as RootSquad } from './model/squad.model';
 
 
 @Injectable({
@@ -9,12 +10,10 @@ import { items } from './model/data.model';
 })
 export class ApiService {
 
-  private rapidApiKey = '15f0458aa599f1888ffa38089535e43f';
-  private rapidApiHost = 'api-football-v1.p.rapidapi.com';
 
   constructor(private http: HttpClient) { }
 
-  getFixtures() {
+  getFixtures(): Observable<Root> {
     const url = `https://v3.football.api-sports.io/fixtures?live=all`;
     const headers = new HttpHeaders({
       "x-rapidapi-host": "v3.football.api-sports.io",
@@ -22,11 +21,11 @@ export class ApiService {
       
     });
 
-    let data = this.http.get<items>(url, { headers: headers });
+    let data = this.http.get<Root>(url, { headers: headers });
     return data;
   }
 
-  getTeam(arg: string) {
+  getTeam(arg: string): Observable<RootSquad> {
     const url = `https://v3.football.api-sports.io/teams?id=`+ arg;
     const headers = new HttpHeaders({
       "x-rapidapi-host": "v3.football.api-sports.io",
@@ -34,7 +33,7 @@ export class ApiService {
       
     });
 
-    let Teams = this.http.get(url, { headers: headers });
+    let Teams = this.http.get<RootSquad>(url, { headers: headers });
     return Teams;
   }
 

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import {Location} from '@angular/common'
+import { Root } from '../model/squad.model';
 
 @Component({
   selector: 'app-squad',
@@ -11,7 +12,7 @@ import {Location} from '@angular/common'
 })
 export class SquadComponent {
   routeObs!: Observable<ParamMap>; 
-  obsBeers! : any
+  obsBeers! : Observable<Root>
 
   results : any; 
   
@@ -33,7 +34,7 @@ export class SquadComponent {
     
 
     this.obsBeers = this.service.getTeam(ItemId);
-    this.obsBeers.subscribe((data: any) => { this.results = data; console.log(this.results) });
+    this.obsBeers.subscribe((data) => { this.results = data; console.log(this.results) });
     console.log(this.results)
   }
 

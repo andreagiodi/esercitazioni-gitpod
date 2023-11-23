@@ -3,7 +3,7 @@ import { ActivatedRoute, Router, ParamMap, Data } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import {Location} from '@angular/common'
-import { items } from '../model/data.model';
+import { Root } from '../model/games.model';
 
 @Component({
   selector: 'app-items',
@@ -11,9 +11,9 @@ import { items } from '../model/data.model';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent {
-  Data!: items;
+  Data!: Root;
   routeObs!: Observable<ParamMap>; 
-  obsBeers! : any
+  obsBeers! : Observable<Root>
 
   results : any; 
   
@@ -35,7 +35,7 @@ export class ItemsComponent {
     
 
     this.obsBeers = this.service.getFixtures();
-    this.obsBeers.subscribe((data: items) => { this.results = data; console.log(this.results) });
+    this.obsBeers.subscribe((data) => { this.results = data; console.log(this.results) });
     console.log(this.results)
   }
 
